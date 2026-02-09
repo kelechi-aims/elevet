@@ -3,11 +3,11 @@ import Link from "next/link";
 
 function Logo() {
   return (
-    <Link href="/">
+    <Link href="/" className="flex items-center justify-center">
       <Image
         src="/img/logo.svg"
         width={150}
-        height={150}
+        height={40}
         alt="Elevet logo"
         className="py-3 px-3"
       />

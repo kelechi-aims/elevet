@@ -1,5 +1,9 @@
-import Image from "next/image";
+import HomeHero from "./_components/HomeHero";
 
 export default function Home() {
-  return <div>Welcomee to Elevet</div>;
+  return (
+    <div>
+      <HomeHero />
+    </div>
+  );
 }
