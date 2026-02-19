@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "@/app/_styles/globals.css";
 import Header from "@/app/_components/Header";
+import Footer from "./_components/Footer";
 
 const franklinGothic = localFont({
   src: [
@@ -37,6 +38,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

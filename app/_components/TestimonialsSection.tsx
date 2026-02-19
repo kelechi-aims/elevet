@@ -6,14 +6,14 @@ const testimonials = [
     image: "/img/client1.png",
     quote: "Elevet transformed our business. Highly recommended!",
     name: "Sarah M.",
-    align: "left",
+    align: "right",
   },
   {
     id: 2,
     image: "/img/client2.png",
     quote: "Professional, reliable, and results-driven.",
     name: "James T.",
-    align: "right",
+    align: "left",
   },
 ];
 

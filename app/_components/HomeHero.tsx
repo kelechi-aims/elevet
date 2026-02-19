@@ -2,10 +2,10 @@ import AppLink from "./AppLink";
 
 function HomeHero() {
   return (
-    <section className="relative bg-[url(/img/hero.png)] min-h-[55vh] bg-cover bg-center">
+    <section className="relative bg-[url(/img/hero.png)] bg-cover bg-center">
       <div className="absolute inset-0 bg-[#3B3939]/60"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 items-center py-56">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 items-center py-20">
         <div className="max-w-4xl">
           <h1 className="text-4xl md:text-7xl font-franklin leading-tight">
             Human-Centric Consulting <br /> for

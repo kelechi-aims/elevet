@@ -3,7 +3,7 @@ import AppLink from "./AppLink";
 
 export default function SuccessStory() {
   return (
-    <section className="py-16 bg-primary-200">
+    <section className="py-16 bg-primary-200 shadow-[0px_10px_20px_0px_#00000040]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Container */}
         <div className="flex flex-col md:flex-row items-center gap-8">

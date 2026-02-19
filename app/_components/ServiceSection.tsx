@@ -1,3 +1,4 @@
+import AppLink from "./AppLink";
 import ServiceCard from "./ServiceCard";
 
 const services = [
@@ -25,7 +26,7 @@ export default function ServiceSection() {
         <h2 className="text-3xl md:text-6xl font-inter font-bold mb-12">
           Our Services
         </h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3 mb-12">
           {services.map((service) => (
             <ServiceCard
               key={service.title}
@@ -35,6 +36,7 @@ export default function ServiceSection() {
             />
           ))}
         </div>
+        <AppLink href="/" text="Book a Consultation" radius="md" />
       </div>
     </section>
   );

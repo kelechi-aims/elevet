@@ -18,13 +18,17 @@ export default function TestimonialCard({
       {/* Quote */}
 
       {/* Author */}
-      <div className="flex items-center gap-4 ">
+      <div className="flex items-center gap-4 h-[80%]">
         <div className="relative w-14 h-14 rounded-full overflow-hidden">
           <Image src={image} alt={name} fill className="object-cover" />
         </div>
         <p className="text-sm md:text-base italic mb-4 pt-4">“{quote}”</p>
       </div>
-      <span className={`text-sm font-medium ${align}`}>- {name}</span>
+      <span
+        className={`block text-sm font-medium ${align === "right" ? "text-right" : "text-left"}`}
+      >
+        - {name}
+      </span>
     </div>
   );
 }

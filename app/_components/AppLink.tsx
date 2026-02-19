@@ -30,7 +30,7 @@ function AppLink({
       href={href}
       className={`inline-flex items-center justify-center px-4 py-2 font-semibold transition ${variantClasses[variant]} ${radiusClasses[radius]}`}
     >
-      {text}
+      <span className="text-nowrap">{text}</span>
     </Link>
   );
 }
