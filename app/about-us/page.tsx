@@ -1,23 +1,8 @@
 import AppLink from "../_components/AppLink";
 import ServiceCard from "../_components/ServiceCard";
-
-const missions = [
-  {
-    imageSrc: "/icons/mission1.svg",
-    title: "Integrity & Trust",
-    description: "Lorem ipsum",
-  },
-  {
-    imageSrc: "/icons/mission2.svg",
-    title: "Client Success",
-    description: "Lorem ipsum",
-  },
-  {
-    imageSrc: "/icons/mission3.svg",
-    title: "Innovation & Excellence",
-    description: "Lorem ipsum",
-  },
-];
+import TeamCard from "../_components/TeamCard";
+import WhyCard from "../_components/WhyCard";
+import { teamMembers, missions, reasons } from "../_lib/data";
 
 function page() {
   return (
@@ -65,7 +50,7 @@ function page() {
       </section>
 
       {/* mission cards */}
-      <section className="py-20 text-white">
+      <section className="py-20 text-white bg-primary-500 shadow-[0px_10px_20px_0px_#00000040]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-6xl font-inter font-bold mb-12">
             Our Mission & Values{" "}
@@ -81,6 +66,51 @@ function page() {
             ))}
           </div>
           <AppLink href="/" text="View All Services" />
+        </div>
+      </section>
+
+      {/* Meet the team */}
+      <section className="pt-16 pb-8 text-center">
+        <h2 className="text-white text-3xl md:text-6xl font-bold mb-2">
+          Meet the Team
+        </h2>
+        <p className="text-white text-xl md:text-3xl font-bold mb-10">
+          Our diverse team of experts is committed to your success.
+        </p>
+
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {teamMembers.map((member) => (
+            <TeamCard
+              key={member.id}
+              name={member.name}
+              role={member.role}
+              image={member.image}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-primary-400 text-center">
+        {/* Top Line */}
+        <div className="max-w-6xl mx-auto grid grid-cols-[20%_60%_20%] items-center">
+          <div className="w-full h-[1.5px] bg-gray-500 mx-auto mb-4"></div>
+
+          <h2 className="text-white text-3xl md:text-6xl font-bold mb-6">
+            Why Choose Elevet?
+          </h2>
+
+          <div className="w-full h-[1.5px] bg-gray-500 mx-auto mb-4"></div>
+        </div>
+
+        <div className="max-w-6xl rounded-lg bg-accent-100 mx-auto px-1 grid grid-cols-1 md:grid-cols-3 gap-6 shadow-[0px_10px_20px_0px_#00000040]">
+          {reasons.map((reason) => (
+            <WhyCard
+              key={reason.id}
+              title={reason.title}
+              description={reason.description}
+            />
+          ))}
         </div>
       </section>
     </>
