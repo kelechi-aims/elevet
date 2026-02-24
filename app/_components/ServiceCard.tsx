@@ -3,7 +3,7 @@ import Image from "next/image";
 type ServiceCardProps = {
   imageSrc: string;
   title: string;
-  description: string;
+  description?: string;
 };
 
 export default function ServiceCard({
@@ -26,9 +26,11 @@ export default function ServiceCard({
         <h3 className="text-xl md:text-3xl text-white font-inter font-bold text-nowrap">
           {title}
         </h3>
-        <p className="mt-2 text-base md:text-xl font-bold text-white font-inter">
-          {description}
-        </p>
+        {description && (
+          <p className="mt-2 text-base md:text-xl font-bold text-white font-inter">
+            {description}
+          </p>
+        )}
       </div>
     </div>
   );

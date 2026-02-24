@@ -60,3 +60,41 @@ export const missions = [
     description: "Lorem ipsum",
   },
 ];
+
+export const services = [
+  {
+    id: 1,
+    imageSrc: "/img/service1.svg",
+    title: "Project & Operations Management Consulting",
+  },
+  {
+    id: 2,
+    imageSrc: "/icons/service2.svg",
+    title: "Human Resources",
+    description: "Workforce System",
+  },
+  {
+    id: 3,
+    imageSrc: "/icons/service3.svg",
+    title: "SaaS Enablement &",
+    description: "Digital Tools Integration",
+  },
+  {
+    id: 4,
+    imageSrc: "/icons/service4.svg",
+    title: "Digital Marketing &",
+    description: "Performance Campaigns",
+  },
+  {
+    id: 5,
+    imageSrc: "/icons/service5.svg",
+    title: "User Generated Content",
+    description: "Creator Campaigns",
+  },
+  {
+    id: 6,
+    imageSrc: "/icons/service6.svg",
+    title: "Training, Capacity",
+    description: "Building & Business Toolkits",
+  },
+];
