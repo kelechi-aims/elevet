@@ -23,7 +23,9 @@ export default function ServiceCard({
         />
       </div>
       <div>
-        <h3 className="text-xl md:text-3xl text-white font-inter font-bold text-nowrap">
+        <h3
+          className={` text-white font-inter font-bold ${description ? "mb-2 text-nowrap text-xl md:text-3xl" : "text-xl"}`}
+        >
           {title}
         </h3>
         {description && (

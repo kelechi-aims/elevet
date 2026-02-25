@@ -4,18 +4,15 @@ import ServiceCard from "./ServiceCard";
 const services = [
   {
     imageSrc: "/icons/strategy.svg",
-    title: "Business Strategy",
-    description: "Lorem ipsum",
+    title: "Project & Operations Management Consulting",
   },
   {
     imageSrc: "/icons/digital.svg",
-    title: "Digital Transformation",
-    description: "Lorem ipsum",
+    title: "Human Resources Workforce System",
   },
   {
     imageSrc: "/icons/leadership.svg",
-    title: "Leadership Training",
-    description: "Lorem ipsum",
+    title: "SaaS Enablement & Digital Tools Integration",
   },
 ];
 
@@ -32,7 +29,6 @@ export default function ServiceSection() {
               key={service.title}
               imageSrc={service.imageSrc}
               title={service.title}
-              description={service.description}
             />
           ))}
         </div>

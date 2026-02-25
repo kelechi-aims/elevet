@@ -103,7 +103,7 @@ function page() {
           <div className="w-full h-[1.5px] bg-gray-500 mx-auto mb-4"></div>
         </div>
 
-        <div className="max-w-6xl rounded-lg bg-accent-100 mx-auto px-1 grid grid-cols-1 md:grid-cols-3 gap-6 shadow-[0px_10px_20px_0px_#00000040]">
+        <div className="max-w-6xl rounded-lg bg-accent-200 mx-auto px-1 grid grid-cols-1 md:grid-cols-3 gap-6 shadow-[0px_10px_20px_0px_#00000040]">
           {reasons.map((reason) => (
             <WhyCard
               key={reason.id}
