@@ -1,56 +1,69 @@
 import Image from "next/image";
-
+import Link from "next/link";
 type CaseStudyCardProps = {
+  slug: string;
   imageSrc: string;
   company: string;
   subtitle: string;
   problem: string;
   solution: string;
-  result?: string;
+  resultValue?: string;
+  resultText?: string;
 };
 
 export default function CaseStudyCard({
+  slug,
   imageSrc,
   company,
   subtitle,
   problem,
   solution,
-  result,
+  resultValue,
+  resultText,
 }: CaseStudyCardProps) {
   return (
-    <div className="overflow-hidden rounded-2xl bg-black/60 shadow-[0px_10px_20px_0px_#00000040]">
-      {/* Image */}
-      <div className="relative h-40 w-full">
-        <Image src={imageSrc} alt={company} fill className="object-cover" />
-      </div>
+    <Link href={`/case-studies/${slug}`}>
+      {" "}
+      <div className="overflow-hidden rounded-2xl bg-[url(/img/casestudy-bg.png)] shadow-[0px_10px_20px_0px_#00000040]">
+        {/* Image */}
+        <div className="relative h-50 w-full">
+          <Image src={imageSrc} alt={company} fill className="object-cover" />
+        </div>
 
-      {/* Content */}
-      <div className="p-5 text-white">
-        <h3 className="text-xl font-bold">{company}</h3>
-        <p className="text-sm text-gray-300">{subtitle}</p>
+        {/* Content */}
+        <div className="p-6 text-white font-inter font-extrabold">
+          <h3 className="text-xl md:text-2xl font-extrabold tracking-wider">
+            {company}
+          </h3>
+          <p className="text-base md:text-[18px] text-white font-extrabold">
+            {subtitle}
+          </p>
 
-        <div className="mt-4 space-y-2 text-sm">
-          <p>
-            <span className="text-green-400 font-semibold">Problem:</span>{" "}
-            {problem}
-          </p>
-          <p>
-            <span className="text-green-400 font-semibold">Solution:</span>{" "}
-            {solution}
-          </p>
-          {result && (
-            <p>
-              <span className="text-green-400 font-semibold">Result:</span>{" "}
-              {result}
-            </p>
-          )}
+          <div className="mt-4 space-y-2 text-sm md:text-base text-white">
+            <div className="grid grid-cols-[auto_1fr] gap-x-2">
+              <span className="text-accent-50">Problem:</span>
+              <span className="">{problem}</span>
+            </div>
+
+            <div className="grid grid-cols-[auto_1fr] gap-x-2">
+              <span className="text-accent-50 ">Solution:</span>
+              <span className="">{solution}</span>
+            </div>
+            {resultText && (
+              <div className="grid grid-cols-[auto_1fr] gap-x-2">
+                <span className="text-accent-50 ">Result:</span>
+                <p>
+                  <span className="text-accent-50 ">{resultValue} </span>
+                  <span className="">{resultText}</span>
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
-
-import Link from "next/link";
 
 type CaseStudyCTAProps = {
   title: string;
@@ -66,24 +79,30 @@ export function CaseStudyCTA({
   buttonHref,
 }: CaseStudyCTAProps) {
   return (
-    <div className="rounded-2xl bg-[linear-gradient(90.01deg,rgba(34,87,34,0.6)_-95.06%,rgba(74,189,74,0.6)_125.06%)] p-6 text-white shadow-[0px_10px_20px_0px_#00000040]">
-      <h3 className="text-2xl font-bold mb-4">{title}</h3>
+    <div className="rounded-2xl bg-accent-250 p-6 text-white shadow-[0px_10px_20px_0px_#00000040]">
+      <h3 className="text-xl md:text-2xl font-extrabold tracking-wide mb-4 underline">
+        {title}
+      </h3>
 
       <ul className="space-y-3 mb-6">
         {points.map((point, idx) => (
           <li key={idx} className="flex items-center gap-2">
-            <span className="text-green-300">✔</span>
-            <span className="text-sm">{point}</span>
+            <span className="text-accent-50 text-5xl">✔</span>
+            <span className="text-base md:text-2xl font-extrabold">
+              {point}
+            </span>
           </li>
         ))}
       </ul>
 
-      <Link
-        href={buttonHref}
-        className="inline-flex items-center justify-center rounded-md bg-green-500 px-5 py-2 text-sm font-semibold text-black hover:bg-green-400 transition"
-      >
-        {buttonText}
-      </Link>
+      <div className="flex items-center justify-center mb-3">
+        <Link
+          href={buttonHref}
+          className="inline-flex items-center justify-center rounded-md bg-accent-50 px-5 py-3 text-sm font-semibold text-white hover:bg-accent-100 transition"
+        >
+          {buttonText}
+        </Link>
+      </div>
     </div>
   );
 }

@@ -7,6 +7,7 @@
   --color-primary-300: #323231;
   --color-primary-400: #d9d9d933;
   --color-primary-500: #c0baba1a;
+  --color-primary-600: #3b3939;
 
   --color-primary-900: #000000bf;
   --color-primary-950: #0000005e;
@@ -15,6 +16,7 @@
   --color-accent-100: #238623;
   --color-accent-150: #61886180;
   --color-accent-200: #4abd4a80;
+  --color-accent-250: #49653dbf;
 
   --font-franklin: "Franklin Gothic Demi", sans-serif;
   --font-inter: "Inter", san-serif;

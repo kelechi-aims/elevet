@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -24,19 +23,19 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 flex flex-wrap gap-4">
               <li>
-                <Link href="#">About Us</Link>
+                <Link href="/about-us">About Us</Link>
               </li>
               <li>
-                <Link href="#">Case Studies</Link>
+                <Link href="/case-studies">Case Studies</Link>
               </li>
               <li>
-                <Link href="#">Services</Link>
+                <Link href="/services">Services</Link>
               </li>
               <li>
                 <Link href="#">Blog</Link>
               </li>
               <li>
-                <Link href="#">Home</Link>
+                <Link href="/">Home</Link>
               </li>
             </ul>
           </div>

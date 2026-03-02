@@ -18,15 +18,17 @@ function page() {
               <h2 className="text-2xl md:text-4xl font-extrabold leading-snug text-white">
                 Real-world examples of how we’ve helped business
                 <br />
-                <span className="text-green-500">
+                <span className="text-accent-50">
                   achieve remarkable success
                 </span>
               </h2>
 
               {/* Description */}
-              <p className="mt-6 text-gray-300 text-sm md:text-lg leading-relaxed">
-                Explore our case studies to see how Elevet has empowered various
-                organizations to overcome challenges, implement effective
+              <p className="mt-6 text-white text-lg md:text-2xl leading-relaxed">
+                Explore our case studies to see how Elevet has empowered
+                <br /> various organizations to overcome challenges, implement
+                effective
+                <br />
                 solutions and achieve tangible results.
               </p>
             </div>
@@ -42,27 +44,31 @@ function page() {
             <CaseStudyCard {...caseStudies[0]} />
             <CaseStudyCard {...caseStudies[1]} />
 
-            <CaseStudyCTA
-              title="Read Case Study"
-              points={[
-                "Expert Guidance",
-                "Tailored Solutions",
-                "Measurable Results",
-              ]}
-              buttonText="Book a Consultation"
-              buttonHref="/consultation"
-            />
+            <div className="h-fit">
+              <CaseStudyCTA
+                title="Read Case Study"
+                points={[
+                  "Expert Guidance",
+                  "Tailored Solutions",
+                  "Measurable Results",
+                ]}
+                buttonText="Book a Consultation"
+                buttonHref="/consultation"
+              />
+            </div>
 
             {/* Remaining cards */}
             {caseStudies.slice(2).map((cs) => (
               <CaseStudyCard
+                slug={cs.slug}
                 key={cs.id}
                 imageSrc={cs.imageSrc}
                 company={cs.company}
                 subtitle={cs.subtitle}
                 problem={cs.problem}
                 solution={cs.solution}
-                result={cs.result}
+                resultText={cs.resultText}
+                resultValue={cs.resultValue}
               />
             ))}
           </div>
@@ -78,12 +84,12 @@ function page() {
           </h2>
 
           {/* Subtext */}
-          <p className="mt-4 text-gray-300 text-sm md:text-lg mb-8">
+          <p className="mt-4 text-white text-base md:text-xl mb-8 font-bold">
             Let&apos;s discuss how we can achieve your business goals together
           </p>
 
           {/* Button */}
-          <AppLink href="/" text="Book a Consultation" radius="lg" />
+          <AppLink href="/" text="Book a Consultation" radius="md" />
         </div>
       </section>
     </>
