@@ -112,6 +112,7 @@ export const caseStudies = [
     subtitle: "Technology Help Desk",
     problem: "Outdated process",
     solution: "Operational automation",
+    challengeImage: "/img/techcorp-challenge.png",
     problemInfo: {
       description:
         "TechCorp faced outdated processes, low productivity, and inefficient workflows that limited scalability.",
@@ -121,22 +122,22 @@ export const caseStudies = [
         {
           title: "Process Automation",
           desc: "Automated repetitive tasks to improve efficiency and reduce errors.",
-          iconSrc: "/img/icons/process-automation.png",
+          iconSrc: "/icons/process-automation.svg",
         },
         {
           title: "Workflow Redesign",
           desc: "Redesigned internal workflows to remove bottlenecks and improve speed.",
-          iconSrc: "/img/icons/workflow-redesign.png",
+          iconSrc: "/icons/workflow-redesign.svg",
         },
         {
           title: "Team Training",
           desc: "Upskilled staff with tools and processes to maintain the new system.",
-          iconSrc: "/img/icons/team-training.png",
+          iconSrc: "/icons/team-training.svg",
         },
         {
           title: "KPI Tracking",
           desc: "Introduced KPI dashboards to measure improvements and performance.",
-          iconSrc: "/img/icons/kpi-tracking.png",
+          iconSrc: "/icons/kpi-tracking.svg",
         },
       ],
     },
@@ -144,8 +145,8 @@ export const caseStudies = [
     resultText: "productivity increase",
     resultInfo: [
       { value: "+45%", label: "Productivity" },
-      { value: "+30%", label: "Operational Cost" },
-      { value: "25%", label: "Decision Making" },
+      { value: "-30%", label: "Operational Cost" },
+      { value: "+2%", label: "Decision Making" },
     ],
     closingTitle: "Elevet transformed how we operate",
     closingBody: "The results exceeded our expectations.",

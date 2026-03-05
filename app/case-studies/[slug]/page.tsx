@@ -1,5 +1,5 @@
 import AppLink from "@/app/_components/AppLink";
-import InfoCard from "@/app/_components/InfoCard";
+import InfoCard, { SolutionCard } from "@/app/_components/InfoCard";
 import { caseStudies } from "@/app/_lib/data";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -17,7 +17,7 @@ export default async function page({ params }: { params: { slug: string } }) {
         <div className="relative h-95 md:h-115 w-full overflow-hidden">
           <Image
             src={study.imageSrc1}
-            alt="Case Study"
+            alt={study.title}
             fill
             className="object-cover"
             priority
@@ -45,30 +45,94 @@ export default async function page({ params }: { params: { slug: string } }) {
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
             <InfoCard
               label="Client"
-              value="TechCorp"
-              subValue="Technology Company"
+              value={study.companyInfo.client}
+              subValue={study.companyInfo.clientNiche}
             />
 
             <InfoCard
               label="Industry"
-              value="TechCorp"
-              subValue="SaaS / IT Services"
+              value={study.company}
+              subValue={study.companyInfo.industry}
             />
 
             <InfoCard
               label="Duration"
-              value="4 Months"
+              value={study.companyInfo.duration}
               subValue="Project Timeline"
             />
           </div>
         </div>
       </section>
 
+      {/* CONTENT GRID */}
+      <section className="py-14">
+        <div className="mx-auto max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* THE CHALLENGE */}
+          <div>
+            <ul className="flex items-center gap-2 text-2xl md:text-5xl font-bold leading-tight font-franklin text-white uppercase mb-4 list-disc pl-5 underline">
+              <li>the challenge</li>
+            </ul>
+
+            <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-white">
+              {study.problemInfo.description}
+            </h2>
+
+            <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-white mt-4">
+              {study.problemInfo.effect}
+            </h2>
+
+            <div className="mt-6 overflow-hidden rounded-2xl shadow-[0px_10px_20px_0px_#00000040]">
+              <div className="relative h-100 w-full">
+                <Image
+                  src={study.challengeImage}
+                  alt="Challenge"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* OUR SOLUTION */}
+          <div>
+            <ul className="flex items-center gap-2 text-2xl md:text-5xl font-bold leading-tight font-franklin text-white uppercase mb-4 list-disc pl-5 underline justify-center">
+              <li>our solution</li>
+            </ul>
+
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {study.problemInfo.providedSolutions.map((item) => (
+                <SolutionCard key={item.title} item={item} />
+              ))}
+            </div>
+
+            {/* Results bar */}
+            <div className="mt-10 rounded-xl border border-white bg-accent-300 p-6 shadow-[0px_10px_20px_0px_#00000040]">
+              <ul className="flex items-center gap-2 text-xl md:text-3xl font-bold leading-tight font-inter text-white  mb-4 list-disc pl-5 justify-center">
+                <li>The Results</li>
+              </ul>
+              <hr className="h-px bg-white" />
+
+              <div className="mt-5 grid grid-cols-3 gap-4 text-center">
+                {study.resultInfo.map((r) => (
+                  <div key={r.label}>
+                    <p className="text-green-500 font-extrabold text-lg">
+                      {r.value}
+                    </p>
+                    <p className="mt-1 text-xs text-white/80">{r.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="bg-accent-150 bg-cover bg-center py-10">
         <div className="max-w-4xl mx-auto px-6 text-center">
           {/* Heading */}
           <h2 className="text-2xl md:text-4xl font-bold text-white">
-            Elevet transformed how we operate`{" "}
+            {study.closingTitle}
           </h2>
 
           {/* Subtext */}
