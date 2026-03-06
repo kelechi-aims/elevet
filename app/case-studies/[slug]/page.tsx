@@ -69,20 +69,20 @@ export default async function page({ params }: { params: { slug: string } }) {
         <div className="mx-auto max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* THE CHALLENGE */}
           <div>
-            <ul className="flex items-center gap-2 text-2xl md:text-5xl font-bold leading-tight font-franklin text-white uppercase mb-4 list-disc pl-5 underline">
+            <ul className="flex items-center gap-2 text-2xl md:text-5xl font-bold leading-tight font-franklin text-white uppercase mb-8 list-disc pl-5 underline">
               <li>the challenge</li>
             </ul>
 
-            <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-white">
+            <h2 className="text-xl md:text-3xl font-extrabold tracking-wide text-white">
               {study.problemInfo.description}
             </h2>
 
-            <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-white mt-4">
+            <h2 className="text-xl md:text-3xl font-extrabold tracking-wide text-white mt-15">
               {study.problemInfo.effect}
             </h2>
 
-            <div className="mt-6 overflow-hidden rounded-2xl shadow-[0px_10px_20px_0px_#00000040]">
-              <div className="relative h-100 w-full">
+            <div className="mt-12 overflow-hidden rounded-2xl shadow-[0px_10px_20px_0px_#00000040]">
+              <div className="relative h-120 w-full">
                 <Image
                   src={study.challengeImage}
                   alt="Challenge"
@@ -100,27 +100,30 @@ export default async function page({ params }: { params: { slug: string } }) {
             </ul>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {study.problemInfo.providedSolutions.map((item) => (
+              {study?.problemInfo?.providedSolutions?.map((item) => (
                 <SolutionCard key={item.title} item={item} />
               ))}
             </div>
 
             {/* Results bar */}
-            <div className="mt-10 rounded-xl border border-white bg-accent-300 p-6 shadow-[0px_10px_20px_0px_#00000040]">
+            <div className="mt-10 rounded-xl border border-white bg-accent-300 p-10 shadow-[0px_10px_20px_0px_#00000040]">
               <ul className="flex items-center gap-2 text-xl md:text-3xl font-bold leading-tight font-inter text-white  mb-4 list-disc pl-5 justify-center">
                 <li>The Results</li>
               </ul>
               <hr className="h-px bg-white" />
 
               <div className="mt-5 grid grid-cols-3 gap-4 text-center">
-                {study.resultInfo.map((r) => (
-                  <div key={r.label}>
-                    <p className="text-green-500 font-extrabold text-lg">
+                {study?.resultInfo?.map((r) => (
+                  <div key={r.label} className="text-accent-400 font-inter">
+                    <p className=" font-extrabold text-lg md:text-2xl">
                       {r.value}
                     </p>
-                    <p className="mt-1 text-xs text-white/80">{r.label}</p>
+                    <p className="mt-2 text-sm md:text-base">{r.label}</p>
                   </div>
                 ))}
+              </div>
+              <div className="mt-6 flex justify-center">
+                <AppLink href="/" text="Book a Consultation" radius="md" />
               </div>
             </div>
           </div>

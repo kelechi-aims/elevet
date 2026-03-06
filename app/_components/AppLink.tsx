@@ -4,7 +4,7 @@ type AppLinkProps = {
   href: string;
   text: string;
   variant?: "primary" | "secondary" | "outline";
-  radius?: "sm" | "md" | "lg" | "full";
+  radius?: "md" | "lg";
 };
 
 const variantClasses = {
