@@ -32,7 +32,7 @@ export default function ServiceSection() {
             />
           ))}
         </div>
-        <AppLink href="/" text="Book a Consultation" radius="md" />
+        <AppLink href="/contact-us" text="Book a Consultation" radius="md" />
       </div>
     </section>
   );

@@ -42,7 +42,7 @@ function Navigation() {
         ))}
 
         <li>
-          <AppLink href="/consultation" text="Book a Consultation" />
+          <AppLink href="/contact-us" text="Book a Consultation" />
         </li>
       </ul>
 
@@ -58,7 +58,7 @@ function Navigation() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden fixed top-13 right-0 z-20 h-screen bg-black px-4 pb-4">
+        <div className="md:hidden fixed top-18 right-0 z-20 h-screen bg-[url('/img/bg.png')] px-4 pb-4">
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -67,7 +67,7 @@ function Navigation() {
             ))}
 
             <li>
-              <AppLink href="/consultation" text="Book a Consultation" />
+              <AppLink href="/contact-us" text="Book a Consultation" />
             </li>
           </ul>
         </div>

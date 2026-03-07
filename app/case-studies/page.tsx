@@ -53,7 +53,7 @@ function page() {
                   "Measurable Results",
                 ]}
                 buttonText="Book a Consultation"
-                buttonHref="/consultation"
+                buttonHref="/contact-us"
               />
             </div>
 
@@ -89,7 +89,7 @@ function page() {
           </p>
 
           {/* Button */}
-          <AppLink href="/" text="Book a Consultation" radius="md" />
+          <AppLink href="/contact-us" text="Book a Consultation" radius="md" />
         </div>
       </section>
     </>

@@ -6,8 +6,8 @@ function Logo() {
     <Link href="/" className="flex items-center justify-center">
       <Image
         src="/img/logo.svg"
-        width={150}
-        height={40}
+        width={200}
+        height={100}
         alt="Elevet logo"
         className="py-3 px-3"
       />

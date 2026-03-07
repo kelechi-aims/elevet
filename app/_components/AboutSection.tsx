@@ -16,7 +16,7 @@ export default function AboutSection() {
           </p>
         </div>
         <div className="pr-18 text-base md:text-3xl">
-          <AppLink text="Learn More >" href="/" variant="outline" />
+          <AppLink text="Learn More >" href="/about-us" variant="outline" />
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { featuredArticles, latestArticles } from "../_lib/data";
 import BlogCard from "../_components/BlogCard";
+import AppLink from "../_components/AppLink";
 
 function page() {
   return (
@@ -90,21 +91,23 @@ function page() {
         </div>
       </section>
 
-      {/* NEWSLETTER CTA */}
-      <section className="bg-[url('/img/cta-bg.png')] bg-cover bg-center py-20">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <h2 className="text-[34px] font-bold leading-tight md:text-[58px]">
+      {/* CTA section */}
+      <section className="bg-accent-150 bg-cover bg-center py-10">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          {/* Heading */}
+          <h2 className="text-2xl md:text-4xl font-bold text-white">
             Stay Updated With Elevet Insights
           </h2>
 
-          <p className="mx-auto mt-4 max-w-4xl text-[22px] font-medium leading-snug text-white/95 md:text-[28px]">
+          {/* Subtext */}
+          <p className="mt-4 text-white text-sm md:text-lg mb-8">
             Sign up for our newsletter to receive the latest business tips,
-            insights, and expert advice.
+            insights, <br />
+            and expert advice.{" "}
           </p>
 
-          <button className="mt-10 rounded-lg bg-[#4ABD4A] px-8 py-4 text-[18px] font-semibold text-white transition hover:bg-[#3ea83e]">
-            Subscribe Now
-          </button>
+          {/* Button */}
+          <AppLink href="/" text="Subscribe Now" radius="md" />
         </div>
       </section>
     </main>

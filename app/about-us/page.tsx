@@ -65,7 +65,7 @@ function page() {
               />
             ))}
           </div>
-          <AppLink href="/" text="View All Services" />
+          <AppLink href="/services" text="View All Services" />
         </div>
       </section>
 

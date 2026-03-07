@@ -57,12 +57,12 @@ function page() {
           </h2>
 
           {/* Subtext */}
-          <p className="mt-4 text-gray-300 text-sm md:text-lg mb-8">
+          <p className="mt-4 text-white text-sm md:text-lg mb-8">
             Let&apos;s discuss how we can help you achieve your goals
           </p>
 
           {/* Button */}
-          <AppLink href="/" text="Book a Consultation" radius="lg" />
+          <AppLink href="/contact-us" text="Book a Consultation" radius="lg" />
         </div>
       </section>
     </>

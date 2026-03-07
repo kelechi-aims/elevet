@@ -17,8 +17,12 @@ function HomeHero() {
           </p>
 
           <div className="text-base md:text-3xl font-inter mt-6 flex flex-wrap gap-8">
-            <AppLink href="/" text="Book a Consultation" />
-            <AppLink href="/" text="View Our Services" variant="secondary" />
+            <AppLink href="/contact-us" text="Book a Consultation" />
+            <AppLink
+              href="/services"
+              text="View Our Services"
+              variant="secondary"
+            />
           </div>
         </div>
       </div>

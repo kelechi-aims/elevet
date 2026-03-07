@@ -249,3 +249,27 @@ export const latestArticles = [
     href: "#",
   },
 ];
+
+export const contactCards = [
+  {
+    id: 1,
+    icon: "icons/email-icon.svg",
+    title: "Email Us",
+    value: "info@elevetlimited.com",
+    subText: "Send us an email",
+  },
+  {
+    id: 2,
+    icon: "icons/phone-icon.svg",
+    title: "Call Us",
+    value: "0701007042",
+    subText: "Give us a call",
+  },
+  {
+    id: 3,
+    icon: "icons/location-icon.svg",
+    title: "Visit Us",
+    value: "68 Abo-Aba St, Ojodu, Lagos 101233, Nigeria",
+    subText: "Get Directions",
+  },
+];
