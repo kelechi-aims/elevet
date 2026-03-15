@@ -14,7 +14,7 @@ export default function ContactCard({
   subText,
 }: ContactCardProps) {
   return (
-    <div className="rounded-3xl bg-[url('/img/card-bg.png')] bg-cover bg-center px-6 py-10 text-center shadow-[0px_10px_20px_0px_#00000040] relative">
+    <div className="rounded-3xl bg-[url('/img/card-bg.png')] bg-cover bg-center px-6 py-10 text-center shadow-[0px_10px_20px_0px_#00000040] relative h-full">
       <div className="mx-auto relative h-14 w-14">
         <Image src={icon} alt={title} fill className="object-contain" />
       </div>

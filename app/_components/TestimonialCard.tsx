@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 type TestimonialCardProps = {
   image: string;
@@ -14,7 +16,11 @@ export default function TestimonialCard({
   align,
 }: TestimonialCardProps) {
   return (
-    <div className="bg-[linear-gradient(90.01deg,rgba(34,87,34,0.6)_-95.06%,rgba(74,189,74,0.6)_125.06%)] text-white rounded-lg p-6 relative">
+    <motion.div
+      className="bg-[linear-gradient(90.01deg,rgba(34,87,34,0.6)_-95.06%,rgba(74,189,74,0.6)_125.06%)] text-white rounded-lg p-6 relative h-full"
+      whileHover={{ y: -10, scale: 1.06 }}
+      transition={{ duration: 0.25 }}
+    >
       {/* Quote */}
 
       {/* Author */}
@@ -29,6 +35,6 @@ export default function TestimonialCard({
       >
         - {name}
       </span>
-    </div>
+    </motion.div>
   );
 }

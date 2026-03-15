@@ -1,38 +1,73 @@
+"use client";
+import { motion, easeOut } from "framer-motion";
+import { heroServices } from "../_lib/data";
 import AppLink from "./AppLink";
 import ServiceCard from "./ServiceCard";
 
-const services = [
-  {
-    imageSrc: "/icons/strategy.svg",
-    title: "Project & Operations Management Consulting",
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
   },
-  {
-    imageSrc: "/icons/digital.svg",
-    title: "Human Resources Workforce System",
+};
+
+const cardWrapperVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: easeOut,
+    },
   },
-  {
-    imageSrc: "/icons/leadership.svg",
-    title: "SaaS Enablement & Digital Tools Integration",
-  },
-];
+};
 
 export default function ServiceSection() {
   return (
     <section className="py-20 text-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-6xl font-inter font-bold mb-12">
+        <motion.h2
+          className="text-3xl md:text-6xl font-inter font-bold mb-12"
+          variants={cardWrapperVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+        >
           Our Services
-        </h2>
-        <div className="grid gap-8 md:grid-cols-3 mb-12">
-          {services.map((service) => (
-            <ServiceCard
+        </motion.h2>
+
+        <motion.div
+          className="grid gap-8 md:grid-cols-3 mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          {heroServices.map((service) => (
+            <motion.div
               key={service.title}
-              imageSrc={service.imageSrc}
-              title={service.title}
-            />
+              variants={cardWrapperVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+            >
+              <ServiceCard imageSrc={service.imageSrc} title={service.title} />
+            </motion.div>
           ))}
-        </div>
-        <AppLink href="/contact-us" text="Book a Consultation" radius="md" />
+        </motion.div>
+
+        <motion.div
+          variants={cardWrapperVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          <AppLink href="/contact-us" text="Book a Consultation" radius="md" />
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 type ServiceCardProps = {
   imageSrc: string;
@@ -12,7 +14,11 @@ export default function ServiceCard({
   description,
 }: ServiceCardProps) {
   return (
-    <div className="flex flex-col items-center rounded-2xl bg-[url(/img/card-bg.png)] p-8 text-center transition duration-300 hover:scale-105">
+    <motion.div
+      whileHover={{ y: -10, scale: 1.1 }}
+      transition={{ duration: 0.25 }}
+      className="flex flex-col items-center rounded-2xl bg-[url(/img/card-bg.png)] p-8 text-center transition duration-300 hover:scale-105"
+    >
       <div className="mb-10 h-26 flex items-center justify-center">
         <Image
           src={imageSrc}
@@ -34,6 +40,6 @@ export default function ServiceCard({
           </p>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -25,7 +25,7 @@ export default function CaseStudyCard({
   return (
     <Link href={`/case-studies/${slug}`}>
       {" "}
-      <div className="overflow-hidden rounded-2xl bg-[url(/img/casestudy-bg.png)] shadow-[0px_10px_20px_0px_#00000040]">
+      <div className="overflow-hidden rounded-2xl bg-[url(/img/casestudy-bg.png)] shadow-[0px_10px_20px_0px_#00000040] h-full">
         {/* Image */}
         <div className="relative h-50 w-full">
           <Image src={imageSrc} alt={company} fill className="object-cover" />

@@ -1,17 +1,66 @@
+"use client";
+import { motion } from "framer-motion";
 import AppLink from "../_components/AppLink";
+import Reveal from "../_components/Reveal";
 import ServiceCard from "../_components/ServiceCard";
 import { services } from "../_lib/data";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const scaleFade = {
+  hidden: { opacity: 0, scale: 0.96, y: 30 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
 
 function page() {
   return (
     <>
       <section>
         <div className="pt-5 text-center">
-          {" "}
-          <h1 className="font-inter font-bold text-3xl md:text-5xl  my-5">
+          <motion.h1
+            className="font-inter font-bold text-3xl md:text-5xl pb-10 my-10"
+            variants={scaleFade}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+          >
             Our Services
-          </h1>
-          <div className=" bg-primary-500 py-8">
+          </motion.h1>
+
+          <motion.div
+            className=" bg-primary-500 py-8 "
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+          >
             <div className="max-w-7xl mx-auto">
               <p className="font-inter text-2xl md:text-4xl mb-4">
                 <span className="font-extrabold text-accent-50">
@@ -25,32 +74,88 @@ function page() {
                 in a ever-changing landscape
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* services */}
       <section className="py-20 bg-[url('/img/dark-texture.png')] bg-cover bg-center">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-white mb-10"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.32 }}
+          >
             Our Services
-          </h2>
+          </motion.h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.id}
-                imageSrc={service.imageSrc}
-                title={service.title}
-              />
-            ))}
-          </div>
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.15 }}
+          >
+            {services.map((service, index) => {
+              const cardVariant =
+                index % 3 === 0
+                  ? {
+                      hidden: { opacity: 0, x: -50, y: 30 },
+                      visible: {
+                        opacity: 1,
+                        x: 0,
+                        y: 0,
+                        transition: { duration: 0.7, ease: "easeOut" },
+                      },
+                    }
+                  : index % 3 === 1
+                    ? {
+                        hidden: { opacity: 0.5, y: 50, scale: 0.95 },
+                        visible: {
+                          opacity: 1,
+                          y: 0,
+                          scale: 1,
+                          transition: { duration: 0.7, ease: "easeOut" },
+                        },
+                      }
+                    : {
+                        hidden: { opacity: 0.5, x: 50, y: 30 },
+                        visible: {
+                          opacity: 1,
+                          x: 0,
+                          y: 0,
+                          transition: { duration: 0.7, ease: "easeOut" },
+                        },
+                      };
+
+              return (
+                <motion.div
+                  key={service.id}
+                  variants={cardVariant}
+                  className="h-full"
+                >
+                  <ServiceCard
+                    imageSrc={service.imageSrc}
+                    title={service.title}
+                  />
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
 
       {/* CTA section */}
       <section className="bg-accent-150 bg-cover bg-center py-10 mb-10">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <motion.div
+          className="max-w-4xl mx-auto px-6 text-center"
+          initial={{ opacity: 0, scale: 0.94, y: 30 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
           {/* Heading */}
           <h2 className="text-2xl md:text-4xl font-bold text-white">
             Elevate your business with our proven expertise
@@ -63,7 +168,7 @@ function page() {
 
           {/* Button */}
           <AppLink href="/contact-us" text="Book a Consultation" radius="lg" />
-        </div>
+        </motion.div>
       </section>
     </>
   );
